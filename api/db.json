@@ -1,0 +1,112 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Lant Géza",
+      "city": "Szeged",
+      "salary": 342
+    },
+    {
+      "id": 2,
+      "name": "Erős István",
+      "city": "Szolnok",
+      "salary": 327
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 3
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 4
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 5
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 6
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 7
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 8
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 9
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 10
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 11
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 12
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 13
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 14
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 15
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 16
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 17
+    },
+    {
+      "name": "Csoda Ernő",
+      "city": "Szeged",
+      "salary": 362,
+      "id": 18
+    }
+  ]
+}
