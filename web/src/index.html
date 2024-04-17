@@ -10,23 +10,54 @@
   <body>
     <div class="container">
       <h1>Dolgozók</h1>
-      <div class="addForm">
-        <div class="input">
-          <label for="name">név</label>
-          <input type="text" id="nameInput" class="form-control">
-        </div>
-        <div class="input">
-          <label for="city" >Település</label>
-          <input type="text" id="cityInput" class="form-control">
-        </div>
-        <div class="input">
-          <label for="salary" class="">Fizetés</label>
-          <input type="text" id="salaryInput" class="form-control">
-        </div>
-        <div>
-          <button class="btn btn-primary mt-2" id="addbutton">mentés</button>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abc()">
+        Hózzáadás
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Hózzáadás</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="addForm">
+                <div class="input">
+                  <label for="id">id</label>
+                  <input type="text" id="idInput" class="form-control" readonly>
+                </div>
+                <div class="input">
+                  <label for="name">név</label>
+                  <input type="text" id="nameInput" class="form-control">
+                </div>
+                <div class="input">
+                  <label for="city" >Település</label>
+                  <input type="text" id="cityInput" class="form-control">
+                </div>
+                <div class="input">
+                  <label for="salary" class="">Fizetés</label>
+                  <input type="text" id="salaryInput" class="form-control">
+                </div>
+                
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" id="addbutton">mentés</button>
+            </div>
+          </div>
         </div>
       </div>
+
+
+
+      
+
+
+
       <table class="table table-striped">
         <thead>
           <tr>
@@ -42,6 +73,7 @@
       </table>
     </div>
     <script src="app.js"></script>
+    <script src="bootstrap.js"></script>
   </body>
 </html>
 

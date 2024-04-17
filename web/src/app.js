@@ -1,6 +1,8 @@
 const doc = {
     empsBody:document.querySelector("#empsBody"),
     addbutton:document.querySelector("#addbutton"),
+    exampleModalLabel:document.querySelector("#exampleModalLabel"),
+    idInput:document.querySelector("#idInput"),
     nameInput:document.querySelector("#nameInput"),
     cityInput:document.querySelector("#cityInput"),
     salaryInput:document.querySelector("#salaryInput")
@@ -14,10 +16,17 @@ const state = {
 }
 
 doc.addbutton.addEventListener('click',()=>{
-    console.log("mentés...")
     setEmployeeState()
     addEmployees()
 })
+
+function abc() {
+    doc.exampleModalLabel.textContent = "Hózzáadás"
+    doc.idInput.value = ""
+    doc.nameInput.value = ""
+    doc.cityInput.value = ""
+    doc.salaryInput.value = ""
+}
 
 getEmployees()
 
@@ -72,7 +81,7 @@ function renderEmployees(empList) {
             <td>${emp.city}</td>
             <td>${emp.salary}</td>
             <td>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" data-id="${emp.id}" data-name="${emp.name}" data-city="${emp.city}" data-salary="${emp.salary}" onclick="updataEmployee(this)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Szerkesztés
                 </button>
                 <button class="btn btn-danger" onclick="deleteEmployee(${emp.id})">
@@ -86,9 +95,21 @@ function renderEmployees(empList) {
 }
 
 function deleteEmployee(id) {
-    let url = state.host + '/' +
+    const url = state.host + '/' +
         state.endpoint +
         '/' + id
-    console.log(url)
     fetch(url, {method:'Delete'})
+}
+
+function updataEmployee(source) {
+    doc.exampleModalLabel.textContent = "Szerkesztés"
+    const url = state.host + '/' +
+        state.endpoint +
+        '/' + source.dataset.id
+    console.log(source.dataset.id)
+    doc.idInput.value = source.dataset.id
+    doc.nameInput.value = source.dataset.name
+    doc.cityInput.value = source.dataset.city
+    doc.salaryInput.value = source.dataset.salary
+    
 }
