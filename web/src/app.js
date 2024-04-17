@@ -1,33 +1,60 @@
 const doc = {
     empsBody:document.querySelector("#empsBody"),
-    addbutton:document.querySelector("#addbutton")
+    addbutton:document.querySelector("#addbutton"),
+    nameInput:document.querySelector("#nameInput"),
+    cityInput:document.querySelector("#cityInput"),
+    salaryInput:document.querySelector("#salaryInput")
 }
 const state = {
-    url: 'http://localhost:8000/employees'
+    host: 'http://localhost:8000',
+    endpoint:'employees',
+    name:'névtelen',
+    city:'ismeretlen',
+    salary:0
 }
 
 doc.addbutton.addEventListener('click',()=>{
     console.log("mentés...")
+    setEmployeeState()
     addEmployees()
 })
 
+getEmployees()
+
+function setEmployeeState() {
+    if (doc.nameInput.value != "") {
+        state.name = doc.nameInput.value      
+    }
+    if (doc.cityInput.value != "") {
+        state.city = doc.cityInput.value
+    }
+    if (doc.salaryInput.value != "") {
+        state.salary = doc.salaryInput.value
+    }
+    doc.nameInput.value = ""
+    doc.cityInput.value = ""
+    doc.salaryInput.value = ""
+}
+
 function addEmployees() {
-    fetch(state.url, {
+    let url = state.host + '/' + state.endpoint
+    fetch(url, {
         method:'Post',
         headers:{
             "Content-type":"application/json"
         },
         body: JSON.stringify({
-            name: "Csoda Ernő",
-            city: "Szeged",
-            salary: 362})
+            name: state.name,
+            city: state.city,
+            salary: state.salary})
     })
 }
 
 
 
 function getEmployees() {
-    fetch(state.url)
+    let url = state.host + '/' + state.endpoint
+    fetch(url)
     .then((response)=> response.json())
     .then(result => {
         console.log(result)
@@ -48,7 +75,7 @@ function renderEmployees(empList) {
                 <button class="btn btn-primary">
                     Szerkesztés
                 </button>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" onclick="deleteEmployee(${emp.id})">
                     Törlés
                 </button>
             </td>
@@ -57,4 +84,11 @@ function renderEmployees(empList) {
         console.log(emp.city)
     });
 }
-getEmployees()
+
+function deleteEmployee(id) {
+    let url = state.host + '/' +
+        state.endpoint +
+        '/' + id
+    console.log(url)
+    fetch(url, {method:'Delete'})
+}
