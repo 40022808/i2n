@@ -64,10 +64,10 @@ function addEmployees() {
     }
 }
 
-function szerkesztes(source) {
+function szerkesztes(id) {
     const url = state.host + '/' +
         state.endpoint +
-        '/' + source
+        '/' + id
     fetch(url, {
         method:'PUT',
         headers:{
