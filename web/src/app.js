@@ -47,8 +47,29 @@ function setEmployeeState() {
 
 function addEmployees() {
     let url = state.host + '/' + state.endpoint
+    if (doc.idInput.value == "") {
+        fetch(url, {
+            method:'Post',
+            headers:{
+                "Content-type":"application/json"
+            },
+            body: JSON.stringify({
+                name: state.name,
+                city: state.city,
+                salary: state.salary})
+        })
+    }
+    else if (doc.idInput.value != "") {
+        szerkesztes(doc.idInput.value)
+    }
+}
+
+function szerkesztes(source) {
+    const url = state.host + '/' +
+        state.endpoint +
+        '/' + source
     fetch(url, {
-        method:'Post',
+        method:'PUT',
         headers:{
             "Content-type":"application/json"
         },
@@ -58,6 +79,7 @@ function addEmployees() {
             salary: state.salary})
     })
 }
+
 
 
 
